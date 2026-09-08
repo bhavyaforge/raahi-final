@@ -1,0 +1,103 @@
+RAAHI 3.0 — how to run it
+=========================
+
+There are two copies of the same app in this folder. Use whichever you like.
+
+
+THE EASY ONE — a single file
+----------------------------
+
+    python3 raahi.py
+
+That is the whole thing. Everything is inside that one file: the server,
+the web pages, the crack detection, the lot. It does not matter which
+folder your Terminal is in — you can even type "python3 " and then drag
+the file into the Terminal window instead of typing the path.
+
+Your browser opens at http://localhost:8000
+Stop it with Control + C.
+
+Readings are saved in a folder called "data", created next to raahi.py.
+Delete that folder to start clean.
+
+
+THE NORMAL ONE — the source folder
+----------------------------------
+
+    cd ~/Desktop/raahi3.0
+    python3 server.py
+
+Same app, but split into files your team can read and edit:
+
+    web/index.html, web/styles.css, web/app.js, web/hero.js
+    raahi_backend/*.py
+    tools/*.py
+
+web/hero.js is the road on the front page — sky, sun, asphalt, the
+reflection down the tarmac and the crack, all drawn in code. There is no
+image file to swap; change the numbers at the top of that file.
+
+
+TRY IT WITHOUT GOING OUTSIDE
+----------------------------
+
+    python3 raahi.py demo
+
+Writes eighteen photographs of a crack that grows a little each morning,
+day 1 to day 18, each one carrying real GPS in its metadata. On the
+CAPTURE tab press "CHOOSE PHOTOS" and select the whole folder at once —
+they go up in order, with a line each saying what happened.
+
+Eighteen is only the demo. Upload as many or as few as you like: two
+photographs on different days already give a growth rate.
+
+    python3 raahi.py demo --passes 5
+
+
+TWO CRACKS, AND STARTING OVER
+-----------------------------
+
+Photographing a different crack? Tick "This is a different crack" on the
+CAPTURE tab before you upload. It opens a new spot and leaves everything
+already recorded alone.
+
+To wipe the record and begin again, go to the SPOTS tab and press
+"CLEAR EVERY RECORD". Your calibration is kept.
+
+Photo 1 says "New spot recorded". Photo 2 onward says "Same spot as
+before" and explains why — the metres from the recorded position, the
+camera heading, the scene match.
+
+Then look at GROWTH, SEAL LIST and REPORT. The crack grows about 1.4 mm a
+day, the lead time comes out around 28 days, and the seal list ranks it by
+
+    growth rate  x  rainfall forecast  x  traffic
+
+with every term and where it came from printed beside the answer.
+
+
+REMOVING A PHOTOGRAPH, AND STARTING OVER
+----------------------------------------
+
+Under the upload button, every photograph in the record appears as a
+thumbnail with its day number and its measurement. Hover one and a small
+cross appears in the corner: click it and that reading comes out of the
+growth curve. The rate, the date and the seal list are recalculated from
+what is left.
+
+"REMOVE ALL" next to that heading empties the whole round. Your
+calibration and the seal threshold are kept.
+
+
+IF SOMETHING LOOKS WRONG
+------------------------
+
+Front page showing big percentages, or a headline across the road image?
+You are looking at an older copy. The front page should be a wordless
+sunrise over a road, with the writing below it.
+
+Nothing happens when you choose photos? The app needs the server — it
+will not work if you double-click index.html. Run "python3 raahi.py"
+and use the address it prints.
+
+Nothing to install. Python 3 only. Nothing leaves your machine.
